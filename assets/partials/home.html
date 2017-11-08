@@ -1,0 +1,51 @@
+	<!--<div ng-controller="AutoCRUDCtrl">-->
+		<div>
+			<table>
+				<tr>
+					<td width="100">ID:</td>
+					<td><input type="text" id="id" ng-model="auto.id" /></td>
+				</tr>
+				<tr>
+					<td width="100">Marca:</td>
+					<td><input type="text" id="name" ng-model="auto.marca" /></td>
+				</tr>
+				<tr>
+					<td width="100">Nombre:</td>
+					<td><input type="text" id="email" ng-model="auto.nombre" /></td>
+				</tr>
+				<tr>
+					<td width="100">Año:</td>
+					<td><input type="text" id="email" ng-model="auto.ano" /></td>
+				</tr>
+			</table>
+			<br /> <br /> 
+			<button type="button" class="btn btn-primary" ng-click="getAuto(auto.id)">Obtener Auto</button>
+			<button type="button" class="btn btn-primary" ng-click="updateAuto(auto.id,auto.marca,auto.nombre,auto.ano)">Actualizar Auto</button>
+			<button type="button" class="btn btn-primary" ng-click="addAuto(auto.marca,auto.nombre,auto.ano)">Agregar Auto</button>
+			<button type="button" class="btn btn-primary" ng-click="deleteAuto(auto.id)">Borrar Auto</button>
+
+		<br /> <br />
+		<p style="color: green">{{message}}</p>
+		<p style="color: red">{{errorMessage}}</p>
+
+		<br />
+		<br /> 
+		<button type="button" class="btn btn-primary" ng-click="getAllAutos()">Obtener todos los autos</button>
+		<br /> <br />
+			<table class="table table-striped" ng-hide="autos == null">
+				<thead>
+				  <tr>
+					<th>Marca</th>
+					<th>Nombre</th>
+					<th>Año</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr ng-repeat="auto in autos">
+					<td>{{auto.marca}}</td>
+					<td>{{auto.nombre}} </td>
+					<td>{{auto.ano}}</td>
+				  </tr>
+				</tbody>
+			</table>
+	</div>
